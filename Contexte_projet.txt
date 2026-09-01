@@ -1,0 +1,191 @@
+Guidelines Demo Day Final Project - Bloc 6 - Direction de projets de gestion de données
+Modalités de groupe
+Date de rendu des livrables : 29/03/2026
+Nombre idéal : 3 à 6 personnes
+Vous êtes 6, je ne connais pas encore votre formation des groupes, et j'aimerais le savoir cette semaine !
+Lien Google Sheet centralisé - Les colonnes vous concernant sont celles de A à E, en premier lieu, vous pouvez remplir la colonne A !
+
+Nous attendons de vous de réaliser au minimum, les étapes suivantes lors de votre projet :
+Récupération de données avancée
+Pipeline ETL
+EDA
+Machine Learning
+Le tout dans un environnement reproductible
+Avec versionning Git et MLFlow
+Solution finale type Streamlit
+J'indique le temps nécessaire légèrement grossi pour chaque étape en incluant la rédaction de documentation (comme discuté en vocal) de vos actions fournissant justifications et sources (important pour assurer vos arrières lors de la présentation) ! 
+Semaine du 12/01 au 23/01
+Récupération de données - 4 heures
+Thématique abordée et type (données réelles ou synthétiques) libre, toutefois, vous ne pouvez pas sélectionner un dataset préalablement propre !
+Voici différentes plateformes vous permettant de récupérer vos jeux de données initiaux (Ordonnées par préférence, je considère le top 3 de même niveau) :
+Github Awesome Public DataSet
+World Bank Open Data
+Data Gouv France
+Github Data is Plural
+Kaggle
+Ce jeu de données initialement prévu doit être enrichi via au moins l'une des options ci-dessous :
+D'autres jeux de données
+API
+Web Scraping (Requests / Scrapy / Beautiful Soup / Selenium)
+Vous pouvez suggérer votre problématique, et par conséquent votre objectif, à vérifier lors de l'étape suivante.
+Les colonnes B à D du Google Sheet à remplir
+Exploration Naïve des données - 4 heures
+Via Python et Jupyter Notebook, vous devez pouvoir dresser les informations principales de votre dataset :
+Son poids initial en stockage et en mémoire
+Ses dimensions (Variables et Observations)
+Quantités de lignes dupliquées / colonnes vides  / valeurs nulles / outliers en nombre et pourcentage
+Analyse descriptive globale
+Quelles seraient les tables de fait et dimensions ?
+Le format et la granularité des données se prêtent-ils à une ingestion pour du OLAP ou OLTP ?
+Quelle est votre variable cible (Nom + type de donnée)?
+La problématique est-elle bien réalisable et quel est son type (Régression ou Classification/Clustering) ?
+Listez les modèles de prédictions correspondant
+
+Vous pourrez vous en arrêter là avant de reprendre en Mars, mais je vais tout de même indiquer les étapes suivantes à la suite de ce message ! 
+À partir de Mars
+Schéma de base de données (systèmes OLAP / OLTP) - 1 heure
+Définition de votre schéma de base de données via DBDiagram
+Data Lake & Data Warehouse - Entreposage des données - 2 heures
+Avec les SGBD de votre choix (en concordance à votre système OLTP/OLAP)   :
+Entreposez vos données bruts au sein d'un Data Lake
+Prévoyez votre Data Warehouse accueillant vos données préparées et enrichies (Qui sera à faire durant la prochaine étape)
+Traitement des données ETL - 4 heures
+Via Pandas/Polars/Pyspark et/ou Librairie SQL sur Jupyter Notebook, procédez au nettoyage de votre Dataset :
+Extraction des données depuis votre source (Data Lake)
+Suppression des lignes dupliquées et colonnes vides
+Gestion des Valeurs nulles / aberrantes
+Transformation/Création éventuelle des colonnes
+Conversion des types de données
+Affichage des nouvelles dimensions des datasets, du cumul de leur empreinte mémoire et le poids en stockage
+Exportation de vos tables vers votre destination (Ingestion Data Warehouse)
+Transformez ce prototype Jupyter Notebook en un script de pipeline ETL
+Exploratory Data Analysis - 8 heures
+Vous pouvez maintenant procéder à une analyse de données extrêmement poussée avec multitudes de graphiques sur Jupyter Notebook :
+Connexion à votre Data Warehouse
+Analyse statistique uni-variée (Description globale variable par variable)
+Analyse statistique bi-variée (Analyse empirique des relations entre 2 variables) avec hypothèses
+Analyse statistique multi-variée (Analyse d'associations/interactions entre plusieurs variables) avec hypothèses précédentes affinées
+Inférences statistiques (Confirmation/Infirmation des hypothèses issues des analyses précédentes)
+Conclusion des variables pertinentes, et des potentielles transformations à faire, en vue du machine learning 
+Data Pre Processing et Machine Learning - 6 heures
+Sur Jupyter Notebook, procédez à la création du jeu de données contenant exclusivement les variables référencées dans votre conclusion précédente, puis :
+Séparation de votre dataset entre variables features et Variable target
+Procédez à une technique de split de vos données (train et test)
+Procédez au flag de vos données contenant des valeurs aberrantes ou nulles dans votre features
+Pipeline d'encodage/standardisation de vos variables categorielles, numériques et éventuellement de dates
+Affichez les dimensions et autres infromations de votre dataset
+Préparez vos modèles de machine learning et vos métriques d'évaluations
+Préparez la sortie des résultats de prédictions face aux données réelles
+Préparez une méthode de fine-tuning
+Conclure sur le modèle vainqueur
+Enregistrez via joblib vos modèles
+Une fois concluant transformez le prototype en script python.
+Solution Webapp (streamlit/MLFlow/fastAPI conseillé) - 6 heures
+Réalisez la solution complète en utilisant vos fichiers de scripts et de sauvegardes précédemment conçus
+Peaufinez l'apparence visuelle
+Rendez la solution accessible en ligne
+Présentation - 4 heures
+Préparez un powerpoint et un script pour votre oral
+Préparez votre Github avec votre Readme
+Test oral afin de vous entraîner
+
+==========
+
+Plan Synthétique - Score d'Impact Environnemental de l'Assiette Mondiale
+Phase 1 : Récupération & Exploration Initiale (Semaine 12-23/01)
+1. Récupération de Données (4h)
+Datasets principaux : Environment Impact of Food Production + World Food/Feed Production
+Enrichissement via API Banque Mondiale : PIB/habitant, taux d'urbanisation par pays
+Web Scraping optionnel : Données de régimes alimentaires spécifiques par région (sources FAO, Our World in Data)
+Documentation : Sources, licences, métadonnées de chaque dataset
+2. Exploration Naïve (4h)
+Dimensions & Poids : Nb lignes/colonnes, stockage, empreinte mémoire
+Qualité : Duplicatas, valeurs nulles, colonnes vides, outliers (%)
+Analyse descriptive : Types de variables, distributions, cardinalités
+Architecture données :
+Tables de fait : Production alimentaire par pays/année, Impact par aliment
+Tables de dimension : Pays, Aliments, Années
+Système : OLAP (analyse multidimensionnelle)
+Variable cible : Empreinte carbone totale (kg CO₂eq) ou hydrique (L) par pays
+Type ML : Régression (prédiction impact) + Clustering (profils pays)
+Modèles pressentis : RandomForest, XGBoost, KMeans, DBSCAN
+Phase 2 : Architecture & Traitement (Mars)
+3. Schéma Base de Données (1h)
+DBDiagram : Modélisation étoile/flocon
+Tables :
+Fait_Production (pays_id, aliment_id, année, tonnes_produites)
+Fait_Impact (aliment_id, co2_kg, eau_litres, land_m2)
+Dim_Pays (pays_id, nom, pib, urbanisation, region)
+Dim_Aliments (aliment_id, nom, catégorie)
+4. Data Lake & Data Warehouse (2h)
+Data Lake : Stockage brut (CSV/Parquet) dans PostgreSQL ou DuckDB
+Data Warehouse : Tables structurées post-ETL (système OLAP optimisé pour requêtes analytiques)
+5. Pipeline ETL (4h)
+Extraction : Lecture depuis Data Lake
+Transformation :
+Jointure Impact × Production (normalisation tonnes → kg)
+Calcul impact total : tonnes_produites × 1000 × co2_par_kg
+Gestion nulls (imputation/suppression), outliers (IQR/Z-score)
+Agrégation par pays/année
+Chargement : Ingestion vers Data Warehouse
+Script Python : Conversion notebook → etl_pipeline.py réutilisable
+Phase 3 : Analyse & Modélisation (Mars)
+6. EDA Approfondie (8h)
+Univariée : Distribution impact par type d'aliment, production par pays
+Bivariée : Corrélation PIB vs empreinte carbone, urbanisation vs consommation viande
+Multivariée : Heatmap corrélations, PCA pour réduction dimensionnelle
+Tests statistiques : ANOVA (différences régions), Pearson/Spearman
+Hypothèses :
+H1 : Pays riches = + forte empreinte animale
+H2 : Urbanisation ↑ = Consommation viande ↑
+Conclusion : Variables retenues pour ML (impact aliments, PIB, production céréales/viande)
+7. Machine Learning (6h)
+Preprocessing :
+Features : Production par catégorie, PIB, urbanisation, régime alimentaire
+Target : Empreinte carbone/hydrique totale
+Train/Test split (80/20), validation croisée
+Encodage catégories (OneHot), standardisation (StandardScaler)
+Modèles Régression : RandomForest, XGBoost, Ridge
+Modèles Clustering : KMeans (profils pays), Hierarchical Clustering
+Évaluation : RMSE, R², MAE / Silhouette Score
+Fine-tuning : GridSearchCV, hyperparamètres optimaux
+MLFlow : Tracking expériences, versioning modèles
+Sauvegarde : joblib.dump(model, 'model_impact.pkl')
+Phase 4 : Déploiement & Présentation (Mars)
+8. Application Streamlit (6h)
+Fonctionnalités :
+Simulateur Menu : L'utilisateur sélectionne aliments + quantités → calcul impact
+Comparateur Pays : Visualisation empreinte par pays/région
+Prédiction : "Si +10% viande, impact carbone augmente de X%"
+Clustering : Affichage profils pays (visualisation 2D/3D)
+Intégration : Chargement modèles via joblib, connexion Data Warehouse
+Visualisations : Graphiques interactifs (Plotly/Altair)
+Déploiement : Streamlit Cloud / Heroku / Render
+9. Git & Versioning
+Structure repo :
+/data (raw, processed)
+/notebooks (EDA, ML)
+/scripts (etl_pipeline.py, train_model.py)
+/app (streamlit_app.py)
+/models (fichiers .pkl)
+README.md, requirements.txt, .gitignore
+MLFlow : Tracking dans /mlruns, serveur local ou distant
+10. Présentation Demo Day (4h)
+PowerPoint :
+Problématique & enjeux
+Pipeline données (schéma)
+Insights EDA (3-4 graphiques clés)
+Résultats ML (métriques, importance features)
+Démo Streamlit live
+Script oral : 15-20 min, répétition
+README Github : Installation, utilisation, résultats, captures écran
+Livrables Attendus (29/03/2026)
+✅ Notebooks (EDA, ML) documentés
+✅ Scripts Python (ETL, training)
+✅ Application Streamlit déployée
+✅ Repository Git complet
+✅ Présentation PowerPoint
+✅ Documentation technique (justifications, sources)
+
+==========
+

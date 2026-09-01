@@ -1,0 +1,81 @@
+# ========================================
+# DATA MANIPULATION & ANALYSIS
+# ========================================
+pandas
+numpy
+polars  # Alternative rapide à Pandas
+
+# ========================================
+# DATA ACQUISITION
+# ========================================
+requests
+wbgapi  # World Bank API
+faostat  # FAO API (si disponible)
+beautifulsoup4  # Web scraping
+selenium  # Web scraping dynamique (optionnel)
+lxml
+
+# ========================================
+# DATABASE & STORAGE
+# ========================================
+sqlalchemy
+psycopg2 # PostgreSQL
+psycopg2-binary # PostgreSQL
+duckdb  # Alternative légère
+pyarrow  # Pour fichiers Parquet
+
+# ========================================
+# DATA VISUALIZATION
+# ========================================
+matplotlib
+seaborn
+plotly
+altair
+
+# ========================================
+# MACHINE LEARNING
+# ========================================
+scikit-learn
+xgboost
+lightgbm
+imbalanced-learn
+
+# ========================================
+# MLOPS & EXPERIMENT TRACKING
+# ========================================
+mlflow
+joblib
+
+# ========================================
+# STATISTICAL ANALYSIS
+# ========================================
+scipy
+statsmodels
+
+# ========================================
+# WEB APPLICATION
+# ========================================
+streamlit
+streamlit-aggrid # Tables interactives
+
+# ========================================
+# JUPYTER & NOTEBOOKS
+# ========================================
+jupyter
+ipykernel
+ipywidgets
+
+# ========================================
+# UTILITIES
+# ========================================
+python-dotenv # Variables d'environnement
+pycountry  # Codes ISO pays
+tqdm  # Progress bars
+openpyxl  # Lecture Excel
+
+# ========================================
+# CODE QUALITY (optionnel)
+# ========================================
+black
+flake8
+pytest
